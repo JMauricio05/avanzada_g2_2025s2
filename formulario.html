@@ -8,5 +8,85 @@
         <h1>Hola mundo!!!!!</h1>
         <br>
         <a href="index.html">Volver...</a>
+        <form action="#">
+            <label for="nombreInput">Ingrese su nombre:</label>
+            <input type="text" name="nombre" id="nombreInput" 
+            maxlength="10" placeholder="Ejemplo: Ana" required>
+            <br>
+            <label>Apellido:</label>
+            <input type="text" name="apellido" value="Gomez" disabled>
+            <br>
+            <label>Edad:</label> 
+            <input type="number" name="edadPersona" min="1" max="120">
+            <br>
+            <fieldset>
+                <legend>Información de contacto</legend>
+                <label>Email:</label>
+                <input type="email" name="correo" 
+                placeholder="example@email.com" required>
+                <br>
+                <label>Teléfono</label>
+                <input type="tel" name="telefono">
+            </fieldset>
+            <br>
+            <label>Fechas:</label>
+            <input type="date" name="fecha"><br>
+            <input type="datetime" name="fechaHora"><br>
+            <input type="datetime-local" name="fechaHoraDos"><br>
+            <input type="time" name="hora"><br>
+            <input type="week" name="semana"><br>
+            <input type="month" name="mes"><br>
+            <label>Archivos:</label>
+            <input type="file" name="archivo" multiple accept=".png">
+            <br>
+            <label>Color favorito</label>
+            <input type="color" name="colorFav">
+            <br>
+            <label>Eres mayor de edad</label>
+            <label>
+                <input type="radio" name="mayorEdad" value="si">
+                Si
+            </label>
+            <label>
+                <input type="radio" name="mayorEdad" value="no" checked>
+                No
+            </label>
+            <label>
+                <input type="radio" name="mayorEdad" value="noResponde" disabled>
+                No responde
+            </label>
+            <br>
+            <label>Jobs</label>
+            <label>
+                <input type="checkbox" name="deporte" checked>Deporte
+            </label>
+            <label>
+                <input type="checkbox" name="cine">Cine
+            </label>
+            <label>
+                <input type="checkbox" name="otro" disabled>Otro
+            </label>
+            <br>
+            <label>Ciudad</label>
+            <select name="ciudad">
+                <option value="1">Tunja</option>
+                <option value="2" selected>Duitama</option>
+                <option value="5">Paipa</option>
+            </select>
+            <br>
+            <label>Observaciones</label>
+            <textarea name="obsv">Prueba....</textarea>
+            <br>
+            <input type="reset" value="cancelar">
+            <input type="submit" value="enviar">
+            <input type="button" value="prueba">
+            <br>
+            <button type="reset">Cancelar</button>
+            <button type="submit">
+                <img src="imgs/css.svg" alt="logo de css" width="34">
+                Enviar
+            </button>
+            <button type="button">Prueba</button>
+        </form>
     </body>
 </html>
