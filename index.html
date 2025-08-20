@@ -1,37 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="UTF-8"/>
-        <title>Inicio</title>
+        <meta charset="UTF-8">
+        <title>Css</title>
+        <style>
+            h2 {
+                color: red;
+                font-size: 80px;
+            }
+            .borde {
+                border: 1px solid blue;
+            }
+            .verde{
+                color: green;
+            }
+        </style>
+        <link rel="stylesheet" href="css/estilos.css">
     </head>
     <body>
-        <!--
-        Comentario....
-        -->
-        <h1>Título</h1>
-        <h2>Título</h2>
-        <h3>Título</h3>
-        <h4>Título</h4>
-        <h5>Título</h5>
-        <h6>Título</h6>
-        <p>Esto es un parráfo.....</p>
-        <p>
-            <strong>Esto</strong> es <b>un</b> <i>parráfo</i>.....
-            <br>
-            <del>HTML</del> 
-            <sub>a</sub> Ejemplo <sup>b</sup>
-        </p>
-        <br>
-        <a href="https://www.uniboyaca.edu.co">Ir a la uniboyaca</a>
-        <a href="https://www.uniboyaca.edu.co" target="_blank">Ir a la uniboyaca</a>
-        <br>
-        <a href="formulario.html">Ir a formulario</a>
-        <br>
-        <img 
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEc9A_S6BPxCDRp5WjMFEfXrpCu1ya2OO-Lw&s" 
-        alt="logo de html5"
-        width="120">
-        <br>
-        <img src="imgs/css.svg" alt="logo de css" width="120">
+        <h1 class="borde" style="color: blue;font-size: 120px;">hola mundo!!!</h1>
+        <h2>Sub titulo 1...</h2>
+        <h2 class="borde verde">Sub titulo 2...</h2>
+        <p class="parrafo">Esto tiene contenido....</p>
     </body>
 </html>
