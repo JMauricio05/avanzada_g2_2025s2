@@ -1,0 +1,54 @@
+h1 {
+    color: #3700ff;
+    font-size: 25px;
+    text-shadow: 0px 0px 5px #0e003f;
+
+    transition-property: color, text-shadow;
+    transition-duration: 500ms, 1s;
+    transition-timing-function: ease-in-out, linear;
+    transition-delay: 1s, 0s;
+
+    transition: color 500ms ease-in-out 1s,
+        text-shadow 1s linear 0s;
+}
+
+h1:hover {
+    color: #ff0000;
+    text-shadow: -10px 0px 5px #9b0101;
+}
+
+.circulo {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #9b0101;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    animation-name: rebote;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: 4;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes rebote {
+    /* from {
+        top: 0px
+    }
+    to {
+        top: 100vh;
+    }   */
+    0% {
+        top: 0px;
+    }
+    50% {
+        width: 125px;
+        height: 125px;
+    }
+
+    100% {
+        top: 100vh;
+    }
+}
