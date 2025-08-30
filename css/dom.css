@@ -1,0 +1,22 @@
+.modal {
+    width: 250px;
+    padding: 25px;
+    text-align: center;
+    border-radius: 16px;
+    background-color: #ff0000;
+    position: fixed;
+    bottom: -200px;
+    left: calc(50% - 125px);
+
+    transition-property: bottom;
+    transition-duration: 400ms;
+    transition-timing-function: linear;
+}
+
+.modal p {
+    color: #ffffff;
+}
+
+.modal.show {
+    bottom: 20px;
+}
