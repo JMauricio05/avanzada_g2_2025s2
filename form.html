@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms en php</title>
+</head>
+<body>
+    <h1>Validar pares e impares</h1>
+    <form action="pares-impares.php?estado=feliz&valor=12345" method="post">
+        <fieldset>
+            <legend>Ingrese el número entero</legend>
+            <label for="numText">Número:</label>
+            <input type="number" id="numText" name="numero" required>
+            <button type="submit">Validar</button>
+        </fieldset>
+    </form>
+</body>
+</html>
