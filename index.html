@@ -3,29 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduccion a php</title>
+    <title>Login</title>
 </head>
 <body>
-    <h1>Hola para php!!</h1>
-    <ul>
-        <li>
-            <a href="variables.php">Variables y tipos</a>
-        </li>
-        <li>
-            <a href="if-switch.php">If switch</a>
-        </li>
-        <li>
-            <a href="ciclos.php">Ciclos</a>
-        </li>
-        <li>
-            <a href="funciones.php">Funciones</a>
-        </li>
-        <li>
-            <a href="clases.php">Clases</a>
-        </li>
-        <li>
-            <a href="form.html">Forms en php</a>
-        </li>
-    </ul>
+    <h1>Iniciar sesion</h1>
+    <br>
+    <form action="db/validar-usuario.php" method="post">
+        <fieldset>
+            <legend>Iniciar sesion</legend>
+            <div>
+                <label for="user">Usuario</label>
+                <input type="text" name="user" id="user">
+            </div>
+            <div>
+                <label for="pwd">Password</label>
+                <input type="password" name="pwd" id="pwd">
+            </div>
+        </fieldset>
+        <button type="submit">Iniciar</button>
+    </form>
 </body>
 </html>
