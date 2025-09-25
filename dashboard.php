@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (empty($_SESSION["user"])){
+if (empty($_SESSION["user"])) {
     header("Location: index.html");
 }
 
@@ -21,8 +21,6 @@ if ($conexDb->connect_error) {
     die("Error de conexion db" . $conexDb->connect_error);
 }
 
-$sql = "select * from users";
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -35,15 +33,32 @@ $sql = "select * from users";
 
 <body>
     <h1>Hola <?php echo $_SESSION['user']; ?></h1>
-
+    <form action="db/crear-usuario.php" method="post">
+        <fieldset>
+            <legend>Crear usuario</legend>
+            <div>
+                <label for="user">Usuario:</label>
+                <input type="text" name="user" id="user" required>
+            </div>
+            <div>
+                <label for="pwd">Contrasenia:</label>
+                <input type="password" name="pwd" id="pwd" required>
+            </div>
+            <div>
+                <button type="submit">Crear</button>
+            </div>
+        </fieldset>
+    </form>
     <?php
-
+    
+    $sql = "select * from users";
     $result = $conexDb->query($sql);
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo '<div>';
-            echo 'Usuario: '.$row['userName'] .'<br>';
-            echo 'Pwd: '.$row['password'];
+            echo 'Usuario: ' . $row['userName'] . '<br>';
+            echo 'Pwd: ' . $row['password'];
+            echo '<a href="db/borrar-usuario.php?cod='.$row['id'].'">borrar</a>';
             echo '</div><br>';
         }
     } else {
