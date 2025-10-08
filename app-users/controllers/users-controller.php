@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 require __DIR__ . "/../models/entities/user.php";
@@ -28,4 +29,19 @@ class UsersController
         return $userValidate;
     }
 
+    public function getUsers()
+    {
+        $user = new User();
+        return $user->all();
+    }
+
+    public function saveNewUser($request){
+        if (empty($request['user']) || empty($request['pwd'])) {
+            return false;
+        }
+        $user = new User();
+        $user->set('userName', $request['user']);
+        $user->set('password', $request['pwd']);
+        return $user->save();
+    }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models\Databases;
 
 use mysqli;
@@ -20,20 +21,23 @@ class GrupoAvanzadaDB
             $this->nameDb
         );
         if ($this->conexDb->connect_error) {
-            die("". $this->conexDb->connect_error);
+            die("" . $this->conexDb->connect_error);
         }
     }
 
-    public function execSQL($sql, ...$bindParam){
+    public function execSQL($sql, ...$bindParam)
+    {
         //return $this->conexDb->query($sql);
         $prp = $this->conexDb->prepare($sql);
-        $prp->bind_param(...$bindParam);
+        if (!empty($bindParam)) {
+            $prp->bind_param(...$bindParam);
+        }
         $prp->execute();
         return $prp->get_result();
-    }    
-
-    public function closeDB(){
-        $this->conexDb->close();
     }
 
+    public function closeDB()
+    {
+        $this->conexDb->close();
+    }
 }

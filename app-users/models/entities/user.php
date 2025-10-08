@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models\Entities;
 
 require __DIR__ . '/../utils/model.php';
@@ -27,6 +28,19 @@ class User extends Model
 
     public function all()
     {
+        $sql = UserSQL::selectAll();
+        $db = new GrupoAvanzadaDB();
+        $result = $db->execSQL($sql);
+        $rows = [];
+        if ($result->num_rows > 0) {
+            while ($item = $result->fetch_assoc()) {
+                $user = new User();
+                $user->set('id', $item['id']);
+                $user->set('userName', $item['userName']);
+                array_push($rows, $user);
+            }
+        }
+        return $rows;
     }
 
     public function find()
@@ -51,6 +65,11 @@ class User extends Model
         }
         return $user;
     }
-}
 
-?>
+    public function save(){
+        $sql = UserSQL::insertInto();
+        $db = new GrupoAvanzadaDB();
+        $result = $db->execSQL($sql, "ss", $this->userName, $this->password);
+        return $result;
+    }
+}

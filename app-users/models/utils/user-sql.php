@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models\Utils;
 
 class UserSQL
@@ -14,4 +15,8 @@ class UserSQL
         return "select * from users where userName=? and password=?";
     }
 
+    public static function insertInto()
+    {
+        return "insert into users (userName, password)values(?,?)";
+    }
 }

@@ -7,6 +7,7 @@ class SessionController
     {
         session_start();
     }
+    
     public function create($user)
     {
         $_SESSION['user'] = $user->get('id');
