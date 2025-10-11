@@ -35,7 +35,8 @@ class UsersController
         return $user->all();
     }
 
-    public function saveNewUser($request){
+    public function saveNewUser($request)
+    {
         if (empty($request['user']) || empty($request['pwd'])) {
             return false;
         }
@@ -43,5 +44,21 @@ class UsersController
         $user->set('userName', $request['user']);
         $user->set('password', $request['pwd']);
         return $user->save();
+    }
+
+    public function updateUser($request)
+    {
+        if (
+            empty($request['id'])
+            || empty($request['user'])
+            || empty($request['pwd'])
+        ) {
+            return false;
+        }
+        $user = new User();
+        $user->set('userName', $request['user']);
+        $user->set('password', $request['pwd']);
+        $user->set('id', $request['id']);
+        return $user->update();
     }
 }

@@ -5,20 +5,22 @@
     justify-content: center;
     align-items: center;
     gap: 25px;
+    flex-wrap: wrap;
 }
 
 .card-user {
     border: 1px solid #000;
     border-radius: 15px;
     width: auto;
-    height: 75px;
+    height: 95px;
     box-shadow: 0px 0px 2px 5px #8c8c8c;
 
     display: grid;
     grid-template-columns: 64px auto;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "icono id"
-        "icono name";
+        "icono name"
+        "icono btns";
     gap: 10px;
     padding: 10px;
 }
@@ -34,4 +36,21 @@
 
 .card-user .name {
     grid-area: name;
+}
+
+.card-user .btns {
+    grid-area: btns;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-user .btns img{
+    width: 32px;
+}
+
+.card-user .btns a:hover{
+    border-bottom: 1px solid #000;
 }

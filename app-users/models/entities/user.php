@@ -68,10 +68,25 @@ class User extends Model
         return $user;
     }
 
-    public function save(){
+    public function save()
+    {
         $sql = UserSQL::insertInto();
         $db = new GrupoAvanzadaDB();
         $result = $db->execSQL($sql, "ss", $this->userName, $this->password);
+        return $result;
+    }
+
+    public function update()
+    {
+        $sql = UserSQL::update();
+        $db = new GrupoAvanzadaDB();
+        $result = $db->execSQL(
+            $sql,
+            "ssi",
+            $this->userName,
+            $this->password,
+            $this->id
+        );
         return $result;
     }
 }

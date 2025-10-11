@@ -19,4 +19,12 @@ class UserSQL
     {
         return "insert into users (userName, password)values(?,?)";
     }
+
+    public static function update()
+    {
+        $sql = "update users set ";
+        $sql .= "userName=?,";
+        $sql .= "password=? where id=?";
+        return $sql;
+    }
 }
