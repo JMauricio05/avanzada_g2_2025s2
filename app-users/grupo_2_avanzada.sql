@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-10-2025 a las 17:28:06
+-- Tiempo de generación: 11-10-2025 a las 18:31:32
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -24,6 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `materias`
+--
+
+CREATE TABLE `materias` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `descripcion` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `materias`
+--
+
+INSERT INTO `materias` (`id`, `nombre`, `descripcion`) VALUES
+(1, 'Programación Basica', 'Pruebassss'),
+(2, 'Programación avanzad', 'Prueba dos'),
+(3, 'Programación Basica', 'Pruebassss'),
+(4, 'Programación avanzad', 'Prueba dos');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `users`
 --
 
@@ -39,14 +61,19 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `userName`, `password`) VALUES
 (1, 'admin', '12345'),
-(2, 'prueba', '12345'),
-(3, 'prueba2', '12345'),
-(4, 'prueba3', '12345'),
-(5, 'prueba4', '12345');
+(2, 'ana', '789'),
+(5, 'prueba4', '12345'),
+(6, 'admin2', '1234569');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `materias`
+--
+ALTER TABLE `materias`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `users`
@@ -59,10 +86,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `materias`
+--
+ALTER TABLE `materias`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
