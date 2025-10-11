@@ -1,0 +1,22 @@
+.modal {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    padding: 12px;
+    border: 2px solid #000;
+    border-radius: 16px;
+    width: 250px;
+    left: calc(50vw - 125px);
+    top: -350px;
+    background-color: #fff;
+    transition-property: top;
+    transition-duration: 500ms;
+    transition-timing-function: linear;
+}
+
+.modal.show {
+    top: calc(50vh - 125px);
+}

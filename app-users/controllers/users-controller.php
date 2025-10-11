@@ -61,4 +61,14 @@ class UsersController
         $user->set('id', $request['id']);
         return $user->update();
     }
+
+    public function deleteUser($request)
+    {
+        if (empty($request['id'])) {
+            return false;
+        }
+        $user = new User();
+        $user->set('id', $request['id']);
+        return $user->delete();
+    }
 }

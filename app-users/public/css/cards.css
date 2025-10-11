@@ -51,6 +51,13 @@
     width: 32px;
 }
 
-.card-user .btns a:hover{
+.btns a, .btns button{
+    background-color: #fff;
+    border: 0px;
+    padding: 0px;
+}
+
+.card-user .btns a:hover,
+.card-user .btns button:hover{
     border-bottom: 1px solid #000;
 }

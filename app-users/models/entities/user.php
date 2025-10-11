@@ -89,4 +89,16 @@ class User extends Model
         );
         return $result;
     }
+
+    public function delete()
+    {
+        $sql = UserSQL::delete();
+        $db = new GrupoAvanzadaDB();
+        $result = $db->execSQL(
+            $sql,
+            "i",
+            $this->id
+        );
+        return $result;
+    }
 }

@@ -27,4 +27,8 @@ class UserSQL
         $sql .= "password=? where id=?";
         return $sql;
     }
+
+    public static function delete(){
+        return "delete from users where id=?";
+    }
 }

@@ -20,6 +20,7 @@ $users = $usersController->getUsers();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="../public/css/cards.css">
+    <link rel="stylesheet" href="../public/css/modals.css">
 </head>
 
 <body>
@@ -48,6 +49,9 @@ $users = $usersController->getUsers();
             echo '      <a href="users-form.php?cod=' . $user->get('id') . '">';
             echo '          <img class="icono" src="../public/res/editar.svg" />';
             echo '      </a>';
+            echo '      <button onclick="borrar(' . $user->get('id') . ')">';
+            echo '          <img class="icono" src="../public/res/borrar.svg" />';
+            echo '      </button>';
             echo '  </div>';
             echo '</div>';
         }
@@ -57,6 +61,20 @@ $users = $usersController->getUsers();
         ?>
     </section>
 
+    <div id="borrarModal" class="modal">
+        <h3 class="titulo">Eliminar el registro</h3>
+        <p class="descripcion">¿Desea eliminar el registro?</p>
+        <form name="borrarUsuarioForm" 
+        action="operaciones/borrar-usuario.php" 
+        method="post" 
+        >
+            <input type="hidden" name="id" value="">
+            <button type="submit">Continuar</button>
+            <button type="reset">Cancelar</button>
+        </form>
+    </div>
+
+    <script src="../public/js/modal-users.js"></script>
 </body>
 
 </html>

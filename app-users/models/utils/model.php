@@ -7,4 +7,5 @@ abstract class Model
     abstract public function find();
     abstract public function save();
     abstract public function update();
+    abstract public function delete();
 }
