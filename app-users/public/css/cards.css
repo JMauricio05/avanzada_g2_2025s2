@@ -10,12 +10,12 @@
 .card-user {
     border: 1px solid #000;
     border-radius: 15px;
-    width: 150px;
+    width: auto;
     height: 75px;
     box-shadow: 0px 0px 2px 5px #8c8c8c;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 64px auto;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "icono id"
         "icono name";
@@ -25,7 +25,7 @@
 
 .card-user .icono {
     grid-area: icono;
-    height: 45px;
+    width: 100%;
 }
 
 .card-user .id {

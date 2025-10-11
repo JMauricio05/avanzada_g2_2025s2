@@ -21,7 +21,7 @@
                 <input type="password" name="pwd" id="pwd">
             </div>
         </fieldset>
-        <button type="submit">Iniciar</button>
+        <button type="submit">Guardar</button>
     </form>
 </body>
 </html>

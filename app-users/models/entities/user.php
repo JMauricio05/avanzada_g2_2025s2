@@ -30,6 +30,7 @@ class User extends Model
     {
         $sql = UserSQL::selectAll();
         $db = new GrupoAvanzadaDB();
+        $db->setIsSqlSelect(true);
         $result = $db->execSQL($sql);
         $rows = [];
         if ($result->num_rows > 0) {
@@ -47,6 +48,7 @@ class User extends Model
     {
         $sql = UserSQL::selectByUserPwd();
         $db = new GrupoAvanzadaDB();
+        $db->setIsSqlSelect(true);
         $result = $db->execSQL(
             $sql,
             "ss",

@@ -29,6 +29,7 @@ $users = $usersController->getUsers();
     <h2>Lista de usuarios</h2>
     <br>
     <a href="users-form.php">Crear usuario</a>
+    <br>
     <section class="cards">
         <?php
         foreach ($users as $user) {
