@@ -1,0 +1,16 @@
+{
+    "scripts": {
+        "autoload": "composer dump-autoload",
+        "eloquent": "composer require illuminate/database"
+    },
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.7",
+        "illuminate/database": "^9.52"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}

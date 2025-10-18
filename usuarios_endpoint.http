@@ -1,0 +1,6 @@
+#sumar dos número
+http://localhost:8080/sumar2?num1=5&num2=3
+
+###
+#consultar todos los usuarios
+http://localhost:8080/users
