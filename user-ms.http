@@ -1,0 +1,20 @@
+#Endpoints para user_ms
+
+# Endpoint: hola mundo!!!
+
+GET http://127.0.0.1:8000
+
+### Consultar todos los usuarios
+GET http://127.0.0.1:8000/users/
+
+### Consultar usuario por id
+GET http://127.0.0.1:8000/users/3
+
+### crear un usuario
+POST http://127.0.0.1:8000/users/
+Content-Type: application/json
+
+{
+    "user": "testUser",
+    "password": "1234567"
+}
