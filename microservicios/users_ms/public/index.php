@@ -6,9 +6,12 @@ use Slim\Factory\AppFactory;
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../app/Config/database.php';
 
-$enpoints = require __DIR__.'/../app/Endpoints/endpoints.php';
+$enpoints = require __DIR__ . '/../app/Endpoints/endpoints.php';
+$token = require __DIR__.'/../app/Middleware/Token.php';
 
 $app = AppFactory::create();
+
+$token($app);
 
 $enpoints($app);
 

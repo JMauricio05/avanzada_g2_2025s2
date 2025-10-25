@@ -1,20 +1,50 @@
 #Endpoints para user_ms
 
 # Endpoint: hola mundo!!!
-
 GET http://127.0.0.1:8000
+Authorization: Bearer 12345
 
 ### Consultar todos los usuarios
 GET http://127.0.0.1:8000/users/
+Authorization: Bearer 12345
 
 ### Consultar usuario por id
-GET http://127.0.0.1:8000/users/3
+GET http://127.0.0.1:8000/users/1
+Authorization: Bearer 12345
 
 ### crear un usuario
 POST http://127.0.0.1:8000/users/
 Content-Type: application/json
+Authorization: Bearer 12345
 
 {
     "user": "testUser",
-    "password": "1234567"
+    "pwd": "1234567"
 }
+
+### modificar usuario
+PUT http://127.0.0.1:8000/users/8
+Content-Type: application/json
+Authorization: Bearer 12345
+
+{
+    "user": "pepe",
+    "pwd": "1234567"
+}
+
+### eliminar usuario
+DELETE http://127.0.0.1:8000/users/9
+Authorization: Bearer 12345
+Code-Validation: 789
+
+### Consultar todos los usuarios V2
+GET http://127.0.0.1:8000/users-v2/
+Authorization: Bearer 12345
+
+### Consultar todos los usuarios V2
+GET http://127.0.0.1:8000/users-v2/v2
+Authorization: Bearer 12345
+
+### Consultar usuario V2
+GET http://127.0.0.1:8000/users-v2/100
+Authorization: Bearer 12345
