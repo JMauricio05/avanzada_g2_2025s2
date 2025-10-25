@@ -13,9 +13,9 @@ const listState = [
     'default' => 400
 ];
 
-const codeValidation = require __DIR__ . '/../Middleware/CodeValidation.php';
+$codeValidation = require __DIR__ . '/../Middleware/CodeValidation.php';
 
-return function (App $app) {
+return function (App $app) use ($codeValidation) {
     $app->get('/', function (Request $request, Response $response, $args) {
         $response->getBody()->write("Hello world!");
         return $response;
@@ -103,13 +103,13 @@ return function (App $app) {
     });
 
 
-    $app->group('/users-v2', function (RouteCollectorProxy $group) {
+    $app->group('/users-v2', function (RouteCollectorProxy $group) use ($codeValidation) {
         //$group->get('/v2', UsersControllerRepository::class.':index');
         $group->get('/', [UsersControllerRepository::class, 'index']);
         $group->get('/{id}', [UsersControllerRepository::class, 'detail']);
         $group->post('/', [UsersControllerRepository::class, 'create']);
         $group->put('/{id}', [UsersControllerRepository::class, 'update']);
         $group->delete('/{id}', [UsersControllerRepository::class, 'delete'])
-            ->add(codeValidation);
+            ->add($codeValidation);
     });
 };
