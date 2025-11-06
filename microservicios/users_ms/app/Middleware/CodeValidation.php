@@ -8,7 +8,9 @@ return function ($req, $handler) {
         $res = new Response();
         $res
             ->getBody()
-            ->write(json_encode(['msg' => 'error']));
+            ->write(json_encode([
+                'msg' => 'error'
+            ]));
         return $res->withStatus(401);
     }
     return $handler->handle($req);
