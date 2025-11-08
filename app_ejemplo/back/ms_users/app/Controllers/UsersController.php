@@ -4,7 +4,7 @@ namespace App\Controllers;
 use App\Models\User;
 use Exception;
 
-class UserControllers
+class UsersController
 {
 
     public function login($username, $password)
@@ -15,7 +15,7 @@ class UserControllers
         if (empty($row)) {
             throw new Exception("User null", 1);
         }
-        return $row;
+        return $row->toJson();
     }
 
 }
