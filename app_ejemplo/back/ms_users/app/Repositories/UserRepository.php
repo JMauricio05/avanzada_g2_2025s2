@@ -32,4 +32,22 @@ class UserRepository
         }
     }
 
+    public function queryAllUsers(Request $request, Response $response){
+        try {
+            $controller = new UsersController();
+            $users = $controller->getUsers();
+            if(empty($users)){
+                return $response->withStatus(204);
+            }
+            $response
+                ->withHeader('Content-Type', 'application/json')
+                ->getBody()
+                ->write($users);
+            return $response;
+        } catch (Exception $ex) {
+            $status =  $this->codesError[$ex->getCode()] ?? $this->codesError['default'];
+            return $response->withStatus($status);
+        }
+    }
+
 }

@@ -9,3 +9,6 @@ Content-Type: application/json
     "user": "admin",
     "pwd": "12345"
 }
+
+### all users
+GET http://127.0.0.1:8000/users/

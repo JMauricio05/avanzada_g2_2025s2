@@ -18,4 +18,12 @@ class UsersController
         return $row->toJson();
     }
 
+    public function getUsers(){
+        $rows = User::all();
+        if(count($rows)==0){
+            return null;
+        }
+        return $rows->toJson();
+    }
+
 }
