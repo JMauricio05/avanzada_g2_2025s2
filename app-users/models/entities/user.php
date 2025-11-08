@@ -17,6 +17,12 @@ class User extends Model
     private $userName;
     private $password;
 
+    private $db;
+
+    public function __construct(){
+        $this->db=  new GrupoAvanzadaDB();
+    }
+
     public function set($prop, $val)
     {
         $this->{$prop} = $val;
@@ -29,9 +35,9 @@ class User extends Model
     public function all()
     {
         $sql = UserSQL::selectAll();
-        $db = new GrupoAvanzadaDB();
-        $db->setIsSqlSelect(true);
-        $result = $db->execSQL($sql);
+        
+        $this->db->setIsSqlSelect(true);
+        $result = $this->db->execSQL($sql);
         $rows = [];
         if ($result->num_rows > 0) {
             while ($item = $result->fetch_assoc()) {
@@ -47,9 +53,9 @@ class User extends Model
     public function find()
     {
         $sql = UserSQL::selectByUserPwd();
-        $db = new GrupoAvanzadaDB();
-        $db->setIsSqlSelect(true);
-        $result = $db->execSQL(
+        
+        $this->db->setIsSqlSelect(true);
+        $result = $this->db->execSQL(
             $sql,
             "ss",
             $this->userName,
@@ -71,16 +77,16 @@ class User extends Model
     public function save()
     {
         $sql = UserSQL::insertInto();
-        $db = new GrupoAvanzadaDB();
-        $result = $db->execSQL($sql, "ss", $this->userName, $this->password);
+        
+        $result = $this->db->execSQL($sql, "ss", $this->userName, $this->password);
         return $result;
     }
 
     public function update()
     {
         $sql = UserSQL::update();
-        $db = new GrupoAvanzadaDB();
-        $result = $db->execSQL(
+        
+        $result = $this->db->execSQL(
             $sql,
             "ssi",
             $this->userName,
